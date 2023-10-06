@@ -1,12 +1,12 @@
-const int StartKnop = 3;
-const int LedBlauw = 4;
+const int StartKnop = 4;
+const int Led = 3;
 
 bool StatusLed = false;
 
 void setup() {
   Serial.begin(9600);
 
-  pinMode(LedBlauw, OUTPUT);
+  pinMode(Led, OUTPUT);
   pinMode(StartKnop, INPUT);  
 
   attachInterrupt(digitalPinToInterrupt(StartKnop), Interrupt, RISING);
@@ -14,7 +14,7 @@ void setup() {
 
 void loop() {
   // Blauwe led aan of uit
-  digitalWrite(LedBlauw, StatusLed);
+  digitalWrite(Led, StatusLed);
 }
 
 void Interrupt() {
