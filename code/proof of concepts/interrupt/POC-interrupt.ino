@@ -1,5 +1,5 @@
-const int StartKnop = 4;
-const int Led = 3;
+const int StartKnop = 3;
+const int Led = 4;
 
 bool StatusLed = false;
 
@@ -13,7 +13,7 @@ void setup() {
 }
 
 void loop() {
-  // Blauwe led aan of uit
+  // Led aan of uit
   digitalWrite(Led, StatusLed);
 }
 
