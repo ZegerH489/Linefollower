@@ -1,21 +1,20 @@
-#include "EEPROMAnything.h"
-
 #include "SerialCommand.h"
+#include "EEPROMAnything.h"
 
 #define SerialPort Serial1
 #define Baudrate 9600
 
 
-#define  BIN2 6 // MotorRechts Vooruit
-#define  BIN1 5 // MotorRechts Achteruit
-#define  AIN2 9 // MotorLinks Achteruit
-#define  AIN1 10 // MotorLinks Achteruit
+#define  BIN2 9 // MotorRightForward (Benable)
+#define  BIN1 10 // MotorRightBackward (Bphase)
+#define  AIN2 5 // MotorLeftForward(Aenable)
+#define  AIN1 6 // MotorLeftForward (Aphase)
 
 SerialCommand sCmd(SerialPort);
-bool run = false;
+bool run = true;
 bool debug;
 unsigned long previous, calculationTime;
-const int sensor[] = {A0, A1, A2, A3, A4, A5};
+const int sensor[] = {A5, A4, A3, A2, A1, A0};
 
 float debugPosition;
 int normalised[6];
@@ -34,7 +33,7 @@ struct param_t
 
 
   
-  //EEPROM parameters
+  /* andere parameters die in het eeprom geheugen moeten opgeslagen worden voeg je hier toe ... */
 } params;
 
 void setup()
@@ -48,7 +47,7 @@ void setup()
   
   EEPROM_readAnything(0, params);
 
-  pinMode(8 , OUTPUT);
+  pinMode(13, OUTPUT);
   pinMode(BIN2, OUTPUT);
   pinMode(BIN1, OUTPUT);
   pinMode(AIN2, OUTPUT);
@@ -67,29 +66,23 @@ void loop()
   {
     previous = current;
 
-    
-
- 
     for (int i = 0; i < 6; i++)normalised[i] = map(analogRead(sensor[i]), params.black[i], params.white[i], 0,1000);
       
-    
-
-
     int index = 0;
     for (int i = 1; i < 6; i++) if (normalised[i] < normalised[index]) index = i;
 
- //   SerialPort.print("index: ");
- //  SerialPort.println(index);
 
-    if (normalised[index] > 700) run =false;
-
-
+    if (normalised[index] > 1300) {
+      if (run == true) SerialPort.println("Weg kwijt");
+      //run =false;
+      
+    }
     float position;
     if (index == 0)position = -30;
     else if (index == 5)position = 30;
     else{
      int sNul = normalised[index];
-     int sMinEen = normalised[index-1];
+     int sMinEen = normalised [index-1];
      int sPlusEen = normalised[index+1];
 
      float b = sPlusEen - sMinEen;
