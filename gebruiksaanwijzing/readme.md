@@ -8,7 +8,7 @@ De lithium batterijen kunnen eenvoudig vervangen worden vanuit de batterijhouder
 Voor draadloze communicatie tussen uw GSM en de linefollower zal er eerst verbinding gemaakt moeten worden met de HC-05 over bluetooth (zoals je zou doen met je koptelefoon), log in met het wachtwoord 1234. Bij een tweede keer verbinding maken via bluetooth zal je de HC-05 eerst moeten vergeten. Wanneer de verbinding via Bluetooth van stand is kan je de app "Serial Bluetooth Terminal" openen en daar het device HC-05 uitkiezen (dit zal het enigste apparaat zijn met een groen streepje naast). Wanneer de verbinding compleet is zal je een bericht binnenkrijgen op de terminal "ready".
 
 #### commando's
-debug ( voor het controleren van waarden en parameters) ;
+debug ( voor het controleren van waarden en parameters) <br/>
 set run (voor het starten van de wagen);
 set stop  (voor het stoppen van de wagen);
 set cycle [µs]  (voor het instellen van de cyclus tijd, best dubbel van de calculation time);
