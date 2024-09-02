@@ -9,16 +9,16 @@ Voor draadloze communicatie tussen uw GSM en de linefollower zal er eerst verbin
 
 #### commando's
 debug ( voor het controleren van waarden en parameters) <br/>
-set run (voor het starten van de wagen);
-set stop  (voor het stoppen van de wagen);
-set cycle [µs]  (voor het instellen van de cyclus tijd, best dubbel van de calculation time);
-set power [0..255]  (voor het regelen van de snelheid met 255 gelijk aan de maximum snelheid);
-set diff [0..1]  (voor de snelheid in bochten te bepalen);
-set kp [0..]  (voor aan te geven hoe snel de linefollower moet reageren op aanpassingen in de koers);
-set ki [0..] (voor integrerend te regelen, naar hoelang de fout zich voordoet) ;
-set kd [0..]  (voor differentiërend te regelen, naar hoe snel de fout wordt opgelost);
-calibrate black  (voor het instellen van de sensorwaarden boven een zwart oppervlak);
-calibrate white  (voor het instellen van de sensorwaarden boven een wit oppervlak);
+set run (voor het starten van de wagen)<br/>
+set stop  (voor het stoppen van de wagen)<br/>
+set cycle [µs]  (voor het instellen van de cyclus tijd, best dubbel van de calculation time)<br/>
+set power [0..255]  (voor het regelen van de snelheid met 255 gelijk aan de maximum snelheid)<br/>
+set diff [0..1]  (voor de snelheid in bochten te bepalen)<br/>
+set kp [0..]  (voor aan te geven hoe snel de linefollower moet reageren op aanpassingen in de koers)<br/>
+set ki [0..] (voor integrerend te regelen, naar hoelang de fout zich voordoet) <br/>
+set kd [0..]  (voor differentiërend te regelen, naar hoe snel de fout wordt opgelost)<br/>
+calibrate black  (voor het instellen van de sensorwaarden boven een zwart oppervlak)<br/>
+calibrate white  (voor het instellen van de sensorwaarden boven een wit oppervlak)<br/>
 
 ### kalibratie
 Plaats de wagen de linefollower boven een wit oppervlak en geef het commando "calibrate white", plaats hierna de linefollower boven een zwart oppervlak gevolgt door het commando "calibrate black".
