@@ -8,17 +8,17 @@ De lithium batterijen kunnen eenvoudig vervangen worden vanuit de batterijhouder
 Voor draadloze communicatie tussen uw GSM en de linefollower zal er eerst verbinding gemaakt moeten worden met de HC-05 over bluetooth (zoals je zou doen met je koptelefoon), log in met het wachtwoord 1234. Bij een tweede keer verbinding maken via bluetooth zal je de HC-05 eerst moeten vergeten. Wanneer de verbinding via Bluetooth van stand is kan je de app "Serial Bluetooth Terminal" openen en daar het device HC-05 uitkiezen (dit zal het enigste apparaat zijn met een groen streepje naast). Wanneer de verbinding compleet is zal je een bericht binnenkrijgen op de terminal "ready".
 
 #### commando's
-debug ( voor het controleren van waarden en parameters) 
-set run (voor het starten van de wagen)
-set stop  (voor het stoppen van de wagen)
-set cycle [µs]  (voor het instellen van de cyclus tijd, best dubbel van de calculation time)
-set power [0..255]  (voor het regelen van de snelheid met 255 gelijk aan de maximum snelheid)
-set diff [0..1]  (voor de snelheid in bochten te bepalen)
-set kp [0..]  (voor aan te geven hoe snel de linefollower moet reageren op aanpassingen in de koers)
-set ki [0..] (voor integrerend te regelen, naar hoelang de fout zich voordoet) 
-set kd [0..]  (voor differentiërend te regelen, naar hoe snel de fout wordt opgelost)
-calibrate black  (voor het instellen van de sensorwaarden boven een zwart oppervlak)
-calibrate white  (voor het instellen van de sensorwaarden boven een wit oppervlak)
+debug ( voor het controleren van waarden en parameters) ;
+set run (voor het starten van de wagen);
+set stop  (voor het stoppen van de wagen);
+set cycle [µs]  (voor het instellen van de cyclus tijd, best dubbel van de calculation time);
+set power [0..255]  (voor het regelen van de snelheid met 255 gelijk aan de maximum snelheid);
+set diff [0..1]  (voor de snelheid in bochten te bepalen);
+set kp [0..]  (voor aan te geven hoe snel de linefollower moet reageren op aanpassingen in de koers);
+set ki [0..] (voor integrerend te regelen, naar hoelang de fout zich voordoet) ;
+set kd [0..]  (voor differentiërend te regelen, naar hoe snel de fout wordt opgelost);
+calibrate black  (voor het instellen van de sensorwaarden boven een zwart oppervlak);
+calibrate white  (voor het instellen van de sensorwaarden boven een wit oppervlak);
 
 ### kalibratie
 Plaats de wagen de linefollower boven een wit oppervlak en geef het commando "calibrate white", plaats hierna de linefollower boven een zwart oppervlak gevolgt door het commando "calibrate black".
